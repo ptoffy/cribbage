@@ -53,13 +53,13 @@ public class ConsoleIO implements CribbageIO {
     public boolean playAgain() {
         System.out.println("Would you like to score another hand? (y/n):");
         String response = scanner.nextLine().trim().toLowerCase();
-        while (!Set.of("y", "n", "yes", "no").contains(response)) {
-            System.out.println("Invalid answer. Try again.");
-        }
         return switch (response) {
             case "y", "yes" -> true;
             case "n", "no" -> false;
-            default -> false; // unreachable
+            default -> {
+                System.out.println("Invalid answer. Possible answers are \"y\", \"yes\", \"n\" or \"no\"");
+                yield playAgain();
+            }
         };
     }
 
