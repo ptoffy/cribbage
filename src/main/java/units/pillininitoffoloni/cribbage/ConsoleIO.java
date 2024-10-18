@@ -1,7 +1,6 @@
 package units.pillininitoffoloni.cribbage;
 
 import java.util.Scanner;
-import java.util.Set;
 
 public class ConsoleIO implements CribbageIO {
     private final Scanner scanner;

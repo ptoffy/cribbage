@@ -15,4 +15,10 @@ class CardTest {
         Card card = new Card('A', '♥');
         Assertions.assertEquals(card.toString(), "Ace of hearts (♥)");
     }
+
+    @Test
+    void testInitWith10() {
+        Card card = new Card('0', '♥');
+        Assertions.assertEquals(card.toString(), "10 of hearts (♥)");
+    }
 }

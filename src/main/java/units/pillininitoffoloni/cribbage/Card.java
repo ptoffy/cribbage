@@ -49,7 +49,7 @@ public class Card implements Comparable<Card> {
         if (!Character.isDigit(kind) && !Set.of('A', 'J', 'Q', 'K').contains(kind)) {
             throw new IllegalArgumentException("Invalid card value: " + kind);
         }
-        this.kind = kind == '0' ? 10 : kind;
+        this.kind = kind;
         this.suit = suit;
     }
 
@@ -83,7 +83,8 @@ public class Card implements Comparable<Card> {
 
     public int getValue() {
         if (Character.isDigit(kind)) {
-            return Integer.parseInt(Character.toString(this.kind)) == 0 ? 10 : kind;
+            int parsed = Character.getNumericValue(kind);
+            return parsed == 0 ? 10 : parsed;
         }
         return switch (this.kind) {
             case 'A' -> 1;
@@ -111,7 +112,8 @@ public class Card implements Comparable<Card> {
      */
     public int getCardValue() {
         if (Character.isDigit(kind)) {
-            return Integer.parseInt(Character.toString(this.kind)) == 0 ? 10 : kind;
+            int parsed = Character.getNumericValue(kind);
+            return parsed == 0 ? 10 : parsed;
         }
         return switch (this.kind) {
             case 'A' -> 1;
