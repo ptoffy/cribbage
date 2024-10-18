@@ -22,7 +22,7 @@ public class CribbageGame {
                 try {
                     String[] hand = io.readHand();
                     List<Card> cards = service.parseAndValidateCards(hand);
-                    // TODO: calculate score here
+                    io.displayScore(service.count(cards));
                 } catch (IllegalArgumentException e) {
                     io.displayError(e.getMessage());
                     break;
