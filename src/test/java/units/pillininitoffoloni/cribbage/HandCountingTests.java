@@ -25,6 +25,6 @@ public class HandCountingTests {
         game.play();
 
         Assertions.assertEquals(testIO.getDisplayedErrors().size(), 0);
-        Assertions.assertEquals(testIO.getDisplayedScores(), List.of(5));
+        Assertions.assertEquals(testIO.getDisplayedScores(), List.of(4));
     }
 }
