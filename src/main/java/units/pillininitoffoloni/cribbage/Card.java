@@ -18,7 +18,14 @@ public class Card implements Comparable<Card> {
                 }
             }
 
-            throw new IllegalArgumentException("Unknown suit " + symbol);
+            return switch (symbol) {
+                case 'd' -> DIAMONDS;
+                case 'h' -> HEARTS;
+                case 's' -> SPADES;
+                case 'c' -> CLUBS;
+                default -> throw new IllegalArgumentException("Unknown suit " + symbol);
+            };
+
         }
 
         Suit(char symbol) {

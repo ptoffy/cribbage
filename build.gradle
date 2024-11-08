@@ -1,7 +1,15 @@
 plugins {
     id 'java'
+    id 'application'
+}
+apply plugin : "java"
+ext {
+    javaMainClass = "units.pillininitoffoloni.cribbage.CribbageGame"
 }
 
+application {
+    mainClassName = javaMainClass
+}
 group = 'org.example'
 version = '1.0-SNAPSHOT'
 
@@ -16,4 +24,7 @@ dependencies {
 
 test {
     useJUnitPlatform()
+}
+run {
+    standardInput = System.in
 }
