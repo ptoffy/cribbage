@@ -16,4 +16,15 @@ public class HandCountingTests {
         Assertions.assertEquals(testIO.getDisplayedErrors().size(), 0);
         Assertions.assertEquals(testIO.getDisplayedScores(), List.of(29));
     }
+
+    @Test
+    void testCountWithSecondExample() {
+        TestIO testIO = new TestIO("0♦J♥Q♠A♣9♦");
+        CribbageGame game = new CribbageGame(testIO, new CribbageService());
+
+        game.play();
+
+        Assertions.assertEquals(testIO.getDisplayedErrors().size(), 0);
+        Assertions.assertEquals(testIO.getDisplayedScores(), List.of(5));
+    }
 }
